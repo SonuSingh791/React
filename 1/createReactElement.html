@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root">
+        <p>Not rendered</p>
+    </div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        const h1 = React.createElement('h1', { id: 'title' }, 'Heading');
+        const h2 = React.createElement('h2', { id: 'title' }, 'Heading');
+        const div = React.createElement('div', { id: 'container' }, [h1, h2]); // this will create div element with id 'container' and h1 and h2 will be inserted
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(div); // this method will override all the child elements inside root element with React elements
+        // h1 is javascript object 
+        // {
+        //     "type": "h1",
+        //     "key": null,
+        //     "ref": null,
+        //     "props": {
+        //          "id": "title",
+        //          "children": "Heading"
+        //     },
+        //     "_owner": null,
+        //         "_store": { }
+        // }
+        console.log(h1);
+        console.log(root);
+
+
+
+    </script>
+
+</body>
+
+</html>
